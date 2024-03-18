@@ -1,5 +1,5 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
 
 #include <iostream>
@@ -32,9 +32,11 @@ void TerkedilmisGezegen::uzayKorsaniMiAltinMiIcinOlasilikFonksiyonu()
 void TerkedilmisGezegen::TerkEdilmisGezegendeUzayKorsanlariCagirmakIcinFonksiyon()
 {
     std::cout<<"Terk edilmis gezegende uzay korsanlarina denk geldiniz...\n";
-    UzayKorsanlari* NewUzayKorsanlari= new UzayKorsanlari(BuGemi);
+    /*UzayKorsanlari* NewUzayKorsanlari= new UzayKorsanlari(BuGemi);
     NewUzayKorsanlari->UzayKorsanlariniBaslatacakFonksiyon();
-    delete NewUzayKorsanlari; //Memory Leak olmamasi icin kullanildiktan sonra silindi
+    delete NewUzayKorsanlari; //Memory Leak olmamasi icin kullanildiktan sonra silindi*/
+
+    std::shared_ptr<UzayKorsanlari> NewUzayKorsanlariEventi=std::make_shared<UzayKorsanlari>(BuGemi);
 
 }
 

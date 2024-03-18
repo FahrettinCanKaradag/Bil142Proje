@@ -1,7 +1,6 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/6/2024.
 //
-
 #include <iostream>
 #include "../inc/NormalGemi.h"
 

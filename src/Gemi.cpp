@@ -1,5 +1,5 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/6/2024.
 //
 
 #include<iostream>
@@ -8,22 +8,22 @@
 
 bool Gemi::GemiOlduMu ()
 {
-    if(yakit>0)
+if(yakit>0)
     {
-        if(saglik>0)
-        {
+    if(saglik>0)
+      {
 
 
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-    else
-    {
+       return false;
+      }
+    else{
         return true;
+      }
     }
+else
+{
+    return true;
+}
 
 }
 
@@ -48,22 +48,22 @@ void Gemi::saglikGuncelleme(int alinanHasar) {
 }
 
 
-void Gemi:: yakitGuncelleme(int azalanYakit)
-{
-    if(yakit-azalanYakit*yakitAzalmaKatsayisi>0)
-    {
-        yakit -=static_cast<int>(yakitAzalmaKatsayisi*azalanYakit);
-    }
-    else
-    {this->GemiOlduMu();}
-}
+ void Gemi:: yakitGuncelleme(int azalanYakit)
+ {
+     if(yakit-azalanYakit*yakitAzalmaKatsayisi>0)
+     {
+         yakit -=static_cast<int>(yakitAzalmaKatsayisi*azalanYakit);
+     }
+     else
+     {this->GemiOlduMu();}
+ }
 
 
 
-void Gemi::paraGuncelleme(int ArtanAzalanPara)
-{
+ void Gemi::paraGuncelleme(int ArtanAzalanPara)
+ {
     this-> para += ArtanAzalanPara; //eger pozitif girilirse artar negatif azalir
-}
+ }
 
 int Gemi::PuanHesaplama()
 {

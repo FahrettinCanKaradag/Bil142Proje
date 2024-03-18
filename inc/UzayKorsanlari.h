@@ -14,7 +14,7 @@ public:
 
     //  Bu Eventi duzenleyen fonksiyonlar
     void UzayKorsanlariniBaslatacakFonksiyon();
-    void KullaiciTercihiAlmaFonksiyonu ();
+    void KullaniciTercihiAlmaFonksiyonu ();
     void OlaylarArasindaBusinessLogicYapanFonk(int);
 
     //Kacma Durumu icin Olan Fonksiyonlar
@@ -30,7 +30,7 @@ public:
 
     void pureVirtualYapanFonksiyon() override;
 
-    ~UzayKorsanlari();
+   // ~UzayKorsanlari();
 
     UzayKorsanlari(std::shared_ptr<Gemi>);
 

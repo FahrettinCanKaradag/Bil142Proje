@@ -1,8 +1,7 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/7/2024.
 //
-
-#include "../inc/UzayKorsanlari.h"
+#include "UzayKorsanlari.h"
 #include<iostream>
 
 
@@ -11,7 +10,7 @@
 void UzayKorsanlari::UzayKorsanlariniBaslatacakFonksiyon() {
 
 
-    KullaiciTercihiAlmaFonksiyonu();
+    KullaniciTercihiAlmaFonksiyonu();
     //cagrildiginda yapilmak istenenler buraya yazilabilir
 }
 
@@ -20,20 +19,20 @@ bool UzayKorsanlari::KacmaTercihiSonucu() {
     int randomGeneratedNumber =rand()%100;//random bir sayi olusturuldu
 
     //std::cout<<"Kacma tercihi sonucu random generated number"<<randomGeneratedNumber<<"\n";
-    if(static_cast<int>(randomGeneratedNumber*BuGemi->hizKatsayisi)>=yuzdeKacmaIhtimali)// geminin hiz katsayisina gore kacma ihtimali degisir
-    {
-        return true;
-    }
-    else
-    {
+     if(static_cast<int>(randomGeneratedNumber*BuGemi->hizKatsayisi)>=yuzdeKacmaIhtimali)// geminin hiz katsayisina gore kacma ihtimali degisir
+     {
+         return true;
+     }
+     else
+     {
         return false;
-    }
+     }
 }
 
 
 void UzayKorsanlari::PazarlikTercihiSonucu()
 {
-    UzayKorsanlariPazarlikTercihiIcinOlasilikFonkisyonu();// Pazarlikla ilgili baska bir sey yapilmak istenirse bu fonksiyona eklenebilir
+ UzayKorsanlariPazarlikTercihiIcinOlasilikFonkisyonu();// Pazarlikla ilgili baska bir sey yapilmak istenirse bu fonksiyona eklenebilir
 
 }
 void UzayKorsanlari:: UzayKorsanlariPazarlikTercihiIcinOlasilikFonkisyonu()
@@ -48,7 +47,7 @@ void UzayKorsanlari:: UzayKorsanlariPazarlikTercihiIcinOlasilikFonkisyonu()
 
     for (int sayac{1};sayac<=kacFarkliDegerdeParaIstenebilir; ++sayac)
     {
-        if((sayac*herBirSayiIcinDusenEsitOlasilik>=randomGeneratedNumber)&& (sayac-1)*herBirSayiIcinDusenEsitOlasilik<=randomGeneratedNumber)
+        if((sayac*herBirSayiIcinDusenEsitOlasilik>randomGeneratedNumber)&& (sayac-1)*herBirSayiIcinDusenEsitOlasilik<=randomGeneratedNumber)
         {
             BuGemi->paraGuncelleme(-(sayac*herFarkliDegerArasindaKacAltinOlsun));
             std::cout<<"Mevcut bakiyeniz: "<<BuGemi->ParaOgrenme()<<"\n";
@@ -59,33 +58,33 @@ void UzayKorsanlari:: UzayKorsanlariPazarlikTercihiIcinOlasilikFonkisyonu()
 
 void UzayKorsanlari::SavasmaTercihiSonucu()
 {
-    const int hasarAlmaOlasiligi{50};
-    int randomGeneratedNumber =std::rand()%100;//random bir sayi olusturuldu
-    if(hasarAlmaOlasiligi>=randomGeneratedNumber)
+const int hasarAlmaOlasiligi{50};
+int randomGeneratedNumber =std::rand()%100;//random bir sayi olusturuldu
+if(hasarAlmaOlasiligi>=randomGeneratedNumber)
+{
+std::cout<<"Tebrikler Kacabildiniz\n";
+
+}
+else
+{
+    std::cout<<"Uzgunuz Kacamadiniz\n";
+    BuGemi->saglikGuncelleme(30);
+    std::cout<<"Kalan caniniz: "<<BuGemi->saglikOgrenme()<<"\n";
+    if(!BuGemi->GemiOlduMu())
     {
-        std::cout<<"Tebrikler Kacabildiniz\n";
-
+        this->KullaniciTercihiAlmaFonksiyonu();
     }
-    else
-    {
-        std::cout<<"Uzgunuz Kacamadiniz\n";
-        BuGemi->saglikGuncelleme(30);
-        std::cout<<"Kalan caniniz: "<<BuGemi->saglikOgrenme()<<"\n";
-        if(!BuGemi->GemiOlduMu())
-        {
-            this->KullaiciTercihiAlmaFonksiyonu();
-        }
 
 
 
-    }
+}
 
 
 }
 
 
 
-void UzayKorsanlari::KullaiciTercihiAlmaFonksiyonu()
+void UzayKorsanlari::KullaniciTercihiAlmaFonksiyonu()
 {
     int tercihiTutanInt{0};
 
@@ -101,7 +100,7 @@ void UzayKorsanlari::KullaiciTercihiAlmaFonksiyonu()
         goto UzayKorsanlariKullaniciTercihiAlma;
     }
     else{
-        OlaylarArasindaBusinessLogicYapanFonk(tercihiTutanInt);
+    OlaylarArasindaBusinessLogicYapanFonk(tercihiTutanInt);
     }
 }
 
@@ -111,67 +110,57 @@ void UzayKorsanlari::OlaylarArasindaBusinessLogicYapanFonk(int tercihTutanInt)
 {
     switch (tercihTutanInt) {
 
-        case 1:
+       case 1:
 
-            if (BuGemi->yakit> static_cast<int>(BuGemi->defaultAzalanYakit*BuGemi->yakitAzalmaKatsayisi)) {
+           if (BuGemi->yakit> static_cast<int>(BuGemi->defaultAzalanYakit*BuGemi->yakitAzalmaKatsayisi)) {
 
-                int AzalanYakit = static_cast<int>(BuGemi->defaultAzalanYakit * BuGemi->yakitAzalmaKatsayisi);
+               int AzalanYakit = static_cast<int>(BuGemi->defaultAzalanYakit * BuGemi->yakitAzalmaKatsayisi);
 
-                std::cout << "Yeterince yakitiniz var kacma denenecek ama bir miktar yakitiniz azalacak\n";
-                std::cout <<"Azalan Yakit Miktari:" << AzalanYakit << "\n";
-                BuGemi->yakitGuncelleme(AzalanYakit);
-
-
-                if (KacmaTercihiSonucu()) {
-                    std::cout << "Tebrikler Kacabildiniz!! \n";
+               std::cout << "Yeterince yakitiniz var kacma denenecek ama bir miktar yakitiniz azalacak\n";
+               std::cout <<"Azalan Yakit Miktari:" << AzalanYakit << "\n";
+               BuGemi->yakitGuncelleme(AzalanYakit);
 
 
-                } else {
-                    std::cout << "Uzgunuz tekrar yakalandiniz!!\n";
-                    KullaiciTercihiAlmaFonksiyonu();
+               if (KacmaTercihiSonucu()) {
+                   std::cout << "Tebrikler Kacabildiniz!! \n";
 
-                }
-            }
 
-            else
-            {
-                std::cout<<"Yeterince yakitiniz yok kacamazsiniz baska bir sey secin \n";
-                KullaiciTercihiAlmaFonksiyonu();
+               } else {
+                   std::cout << "Uzgunuz tekrar yakalandiniz!!\n";
+                   KullaniciTercihiAlmaFonksiyonu();
 
-            }
-            break;
-        case 2:
+               }
+           }
 
-            std::cout<< "Pazarligi tercih ettiniz belli miktarda paraniz azalacak (-) bakiyeye de ye de dusebilirsiniz\n";
-            PazarlikTercihiSonucu();
-            break;
+           else
+           {
+               std::cout<<"Yeterince yakitiniz yok kacamazsiniz baska bir sey secin \n";
+               KullaniciTercihiAlmaFonksiyonu();
 
-        case 3:
-            std::cout<<"Savasmayi tercih ettiniz ya hasar alacaksiniz ya da kazacaksiniz \n";
-            SavasmaTercihiSonucu();
-    } //switch case e ait "}"
+           }
+           break;
+       case 2:
+
+           std::cout<< "Pazarligi tercih ettiniz belli miktarda paraniz azalacak (-) bakiyeye de ye de dusebilirsiniz\n";
+           PazarlikTercihiSonucu();
+           break;
+
+       case 3:
+           std::cout<<"Savasmayi tercih ettiniz ya hasar alacaksiniz ya da kazacaksiniz \n";
+           SavasmaTercihiSonucu();
+           } //switch case e ait "}"
 } // fonksiyona ait "}"
 
 
-UzayKorsanlari::~UzayKorsanlari(){
 
-    if (BuGemi->GemiOlduMu())
-    {
 
-        //std::cout<<"Uzay korsanlari destruct oldu\n";
 
-    }
-    else {
-        // std::cout<<"Uzay korsanlari destruct oldu\n";
-
-    }
-
-}
 void UzayKorsanlari::pureVirtualYapanFonksiyon() {}
 
 
 UzayKorsanlari::UzayKorsanlari(std::shared_ptr<Gemi> AlinanGemi) {
 
     BuGemi=std::move(AlinanGemi);
-    this->KullaiciTercihiAlmaFonksiyonu();
+    //this->KullaniciTercihiAlmaFonksiyonu();
+    this->UzayKorsanlariniBaslatacakFonksiyon();
 }

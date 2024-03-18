@@ -1,15 +1,14 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/6/2024.
 //
 
-#ifndef INC_142ROJE_CYOLOG_ASTEROIDKUSAGI_H
-#define INC_142ROJE_CYOLOG_ASTEROIDKUSAGI_H
-
+#ifndef PROJEDENEME1_ASTEROIDKUSAGI_H
+#define PROJEDENEME1_ASTEROIDKUSAGI_H
 #include "../inc/Event.h"
 
 
 class AsteroidKusagi : public Event
-{
+        {
 public:
     void GemiHasarAldiMi(int);
 
@@ -23,5 +22,4 @@ public:
 
 
 };
-
-#endif //INC_142ROJE_CYOLOG_ASTEROIDKUSAGI_H
+#endif //PROJEDENEME1_ASTEROIDKUSAGI_H

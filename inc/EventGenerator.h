@@ -1,14 +1,13 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
 
-#ifndef INC_142ROJE_CYOLOG_EVENTGENERATOR_H
-#define INC_142ROJE_CYOLOG_EVENTGENERATOR_H
+#ifndef PROJEDENEME1_EVENTGENERATOR_H
+#define PROJEDENEME1_EVENTGENERATOR_H
 
-#endif //INC_142ROJE_CYOLOG_EVENTGENERATOR_H
+#endif //PROJEDENEME1_EVENTGENERATOR_H
 
-
-#include "../../Proje/inc/Event.h"
+#include "../inc/Event.h"
 class EventGenerator{
 
 
@@ -18,5 +17,6 @@ public:
     std::shared_ptr<Gemi>  eventGenerateEtmekIcinGemi;
     void EventGenerateEdecekFonksiyon();
     const int OlayCagirmaSayisi{5};
+
 
 };

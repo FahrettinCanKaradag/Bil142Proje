@@ -1,17 +1,24 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
 
 #include <iostream>
-//#include "AsteroidKusagi.h"
-#include "../inc/AsteroidKusagi.h"
+#include "AsteroidKusagi.h"
 
 void   AsteroidKusagi::GemiHasarAldiMi(int sayac)
 {
     const int BirKeredeAlinacakHasar{10};
-    int randomGeneratedNumber =rand()%100;//random bir sayi olusturuldu
-    const int GemiHasarOlmaOlasiligi{50};
-    if(randomGeneratedNumber>=GemiHasarOlmaOlasiligi)
+    int randomGeneratedNumber = rand()%101;//random bir sayi olusturuldu
+    const double GemiHasarOlmaOlasiligi{50.0};
+
+    //int BuGemininHasarOlmaOlasiligi=static_cast<int>(GemiHasarOlmaOlasiligi/(BuGemi->hiz));
+
+
+
+
+
+
+    if(randomGeneratedNumber>=static_cast<int>(GemiHasarOlmaOlasiligi/(BuGemi->hizKatsayisi)))
     {
         std::cout<<sayac<<". Ihtimalde Asteroid Kusaginda Hasar Alinmadan Kurtulundu \n ";
     }
@@ -26,8 +33,6 @@ void   AsteroidKusagi::GemiHasarAldiMi(int sayac)
         }
 
 
-
-
     }
 
 }
@@ -35,7 +40,7 @@ void   AsteroidKusagi::GemiHasarAldiMi(int sayac)
 
 void AsteroidKusagi::AsteroidKusagiBusinessLogicYapanFonk() {
 
-    const int GemiHasariFonksiyonuKacKereDonecek{3};
+   const int GemiHasariFonksiyonuKacKereDonecek{3};
 
     std::cout<<"Gemi Asteroid Kusagina Denk Geldi "<<GemiHasariFonksiyonuKacKereDonecek;
     std::cout<<"kere hasar alma ihtimali var \n";

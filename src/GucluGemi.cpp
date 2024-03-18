@@ -1,6 +1,7 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/6/2024.
 //
+
 
 #include "../inc/GucluGemi.h"
 
@@ -15,8 +16,8 @@ GucluGemi::GucluGemi() {
 }
 void GucluGemi::hiz_Belirleme() {
 
-    this-> hizKatsayisi={0.5};
-    this-> hiz=  static_cast<int>(this->hiz* this->hizKatsayisi);
+   this-> hizKatsayisi={0.5};
+   this-> hiz=  static_cast<int>(this->hiz* this->hizKatsayisi);
 
 }
 

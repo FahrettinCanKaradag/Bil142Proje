@@ -1,6 +1,7 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/6/2024.
 //
+
 
 #include "../inc/HizliGemi.h"
 
@@ -15,7 +16,7 @@ HizliGemi::HizliGemi(){
 void HizliGemi::hiz_Belirleme() {
 
     this->hizKatsayisi={1.5};
-    this-> hiz=  static_cast<int>(this->hiz*this->hizKatsayisi);
+   this-> hiz=  static_cast<int>(this->hiz*this->hizKatsayisi);
 
 }
 
@@ -28,7 +29,7 @@ void HizliGemi::yakit_Belirleme() {
 void HizliGemi::saglik_Belirleme() {
 
     this->saglikKatsayisi={1.0};
-    this-> saglik=static_cast<int>(this->saglik*saglikKatsayisi);
+   this-> saglik=static_cast<int>(this->saglik*saglikKatsayisi);
 }
 
 

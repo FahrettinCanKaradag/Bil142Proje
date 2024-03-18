@@ -19,7 +19,7 @@ public :
 
 
 
-    int eventNumber{0};
+
 
 
 protected:

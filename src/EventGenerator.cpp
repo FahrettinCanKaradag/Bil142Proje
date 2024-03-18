@@ -1,7 +1,6 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
-
 #include <iostream>
 #include "../inc/EventGenerator.h"
 #include "../inc/UzayKorsanlari.h"
@@ -36,7 +35,7 @@ void EventGenerator::EventGenerateEdecekFonksiyon()
             NewEvent = std::make_shared<AsteroidKusagi> (eventGenerateEtmekIcinGemi);//gemi ile eventi generate edemiyoruz
             break;
         case 2:
-            // std::cout<<"case 2\n";
+          // std::cout<<"case 2\n";
             NewEvent = std::make_shared<UzayKorsanlari> (eventGenerateEtmekIcinGemi);
             break;
         case 3:
@@ -44,9 +43,12 @@ void EventGenerator::EventGenerateEdecekFonksiyon()
             NewEvent = std::make_shared<TerkedilmisGezegen>(eventGenerateEtmekIcinGemi);
             break;
         default:
-            std::cout<<"default";
+           // std::cout<<"default";
             break;
     }
 
 
 }
+
+
+

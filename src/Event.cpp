@@ -1,8 +1,7 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/7/2024.
 //
-
-#include"../../Proje/inc/Event.h"
+#include"../inc/Event.h"
 #include <iostream>
 
 
@@ -10,7 +9,7 @@
 
 Event::Event(std::shared_ptr<Gemi> SecilenGemi)
 {
-
     BuGemi=std::move(SecilenGemi);
-
 }
+
+

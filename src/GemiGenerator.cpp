@@ -1,12 +1,13 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
-#include "../inc/GemiGenerator.h"
+#include "GemiGenerator.h"
 #include <iostream>
 #include<memory>
 #include "../inc/HizliGemi.h"
 #include "../inc/GucluGemi.h"
 #include "../inc/NormalGemi.h"
+#include   <array>
 
 
 
@@ -32,15 +33,20 @@ void GemiGenerator:: GemiGeneratorileEventGenerateEdenFonksiyon(std::shared_ptr<
 {
     std::shared_ptr<EventGenerator>NewEvent;
 
-    int deneme{0};
-    while (!MyGemi->GemiOlduMu()&&deneme<5)
+    int denemeSayisi=KacKereEventCagrilacak;
+    int denemeSayaci{1};
+   // std::cout<<"deneme sayaci"<<"\n";
+
+    while (!MyGemi->GemiOlduMu()&&denemeSayaci<=denemeSayisi)
     {
-        ++deneme;
-        std::cout<<"deneme:"<<deneme<<"\n";
+
+        std::cout<<"Event: "<<denemeSayaci<<"\n";
         NewEvent = std::make_shared<EventGenerator>(MyGemi);
+        ++denemeSayaci;
 
     }
-    std::cout<<"Toplam pauniniz: "<<MyGemi->PuanHesaplama()<<"\n";
+
+    std::cout<<"Toplam puaniniz: "<<MyGemi->PuanHesaplama()<<"\n";
 }
 
 

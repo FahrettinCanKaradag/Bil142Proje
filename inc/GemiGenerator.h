@@ -1,9 +1,9 @@
 //
-// Created by CAN on 14.03.2024.
+// Created by Hayrullah on 3/10/2024.
 //
 
-#ifndef INC_142ROJE_CYOLOG_GEMIGENERATOR_H
-#define INC_142ROJE_CYOLOG_GEMIGENERATOR_H
+#ifndef PROJEDENEME1_GEMIGENERATOR_H
+#define PROJEDENEME1_GEMIGENERATOR_H
 #include "../inc/Gemi.h"
 #include"../inc/EventGenerator.h"
 
@@ -18,11 +18,11 @@ class GemiGenerator
 public:
     GemiGenerator();
 
-protected:
+   protected:
+    int KacKereEventCagrilacak{5};
+     const int toplamGemiTuru{3};
 
-    const int toplamGemiTuru{3};
-
-    void GemiGeneratorKullaniciIleIletisimKuracakFonksiyon();
+     void GemiGeneratorKullaniciIleIletisimKuracakFonksiyon();
 
     void GemiGeneratorGemiGenerateEdecekFonksiyon(int);
 
@@ -32,4 +32,5 @@ protected:
 
 };
 
-#endif //INC_142ROJE_CYOLOG_GEMIGENERATOR_H
+
+#endif //PROJEDENEME1_GEMIGENERATOR_H
